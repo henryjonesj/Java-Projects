@@ -1,0 +1,8 @@
+MIDlet-1: pacman, , pacman.pacman
+MIDlet-Jar-Size: 15741
+MIDlet-Jar-URL: packy.jar
+MIDlet-Name: packy
+MIDlet-Vendor: Vendor
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1

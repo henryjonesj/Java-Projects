@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="ArithService" targetNamespace="urn:arith" xmlns:tns="urn:arith" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="urn:arith" xmlns:tns="urn:arith" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="add">
+        <sequence>
+          <element name="int_1" type="int"/>
+          <element name="int_2" type="int"/></sequence></complexType>
+      <complexType name="addResponse">
+        <sequence>
+          <element name="result" type="int"/></sequence></complexType>
+      <complexType name="sub">
+        <sequence>
+          <element name="int_1" type="int"/>
+          <element name="int_2" type="int"/></sequence></complexType>
+      <complexType name="subResponse">
+        <sequence>
+          <element name="result" type="int"/></sequence></complexType>
+      <element name="add" type="tns:add"/>
+      <element name="addResponse" type="tns:addResponse"/>
+      <element name="sub" type="tns:sub"/>
+      <element name="subResponse" type="tns:subResponse"/></schema></types>
+  <message name="ArithInt_add">
+    <part name="parameters" element="tns:add"/></message>
+  <message name="ArithInt_addResponse">
+    <part name="result" element="tns:addResponse"/></message>
+  <message name="ArithInt_sub">
+    <part name="parameters" element="tns:sub"/></message>
+  <message name="ArithInt_subResponse">
+    <part name="result" element="tns:subResponse"/></message>
+  <portType name="ArithInt">
+    <operation name="add">
+      <input message="tns:ArithInt_add"/>
+      <output message="tns:ArithInt_addResponse"/></operation>
+    <operation name="sub">
+      <input message="tns:ArithInt_sub"/>
+      <output message="tns:ArithInt_subResponse"/></operation></portType>
+  <binding name="ArithIntBinding" type="tns:ArithInt">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="add">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/></input>
+      <output>
+        <soap:body use="literal"/></output></operation>
+    <operation name="sub">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/></input>
+      <output>
+        <soap:body use="literal"/></output></operation></binding>
+  <service name="ArithService">
+    <port name="ArithIntPort" binding="tns:ArithIntBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="VideoService" targetNamespace="urn:video" xmlns:tns="urn:video" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types/>
+  <message name="VideoInt_getVideo">
+    <part name="String_1" type="xsd:string"/></message>
+  <message name="VideoInt_getVideoResponse">
+    <part name="result" type="xsd:base64Binary"/></message>
+  <portType name="VideoInt">
+    <operation name="getVideo" parameterOrder="String_1">
+      <input message="tns:VideoInt_getVideo"/>
+      <output message="tns:VideoInt_getVideoResponse"/></operation></portType>
+  <binding name="VideoIntBinding" type="tns:VideoInt">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="getVideo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="urn:video"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="urn:video"/></output></operation></binding>
+  <service name="VideoService">
+    <port name="VideoIntPort" binding="tns:VideoIntBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

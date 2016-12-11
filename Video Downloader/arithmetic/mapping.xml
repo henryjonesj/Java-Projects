@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+<package-mapping>
+<package-type>arith</package-type>
+<namespaceURI>urn:arith</namespaceURI>
+</package-mapping>
+<package-mapping>
+<package-type>arith</package-type>
+<namespaceURI>urn:arith</namespaceURI>
+</package-mapping>
+<java-xml-type-mapping>
+<java-type>arith.ArithInt_add_RequestStruct</java-type>
+<root-type-qname xmlns:typeNS="urn:arith">typeNS:add</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>int_1</java-variable-name>
+<xml-element-name>int_1</xml-element-name>
+</variable-mapping>
+<variable-mapping>
+<java-variable-name>int_2</java-variable-name>
+<xml-element-name>int_2</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>arith.ArithInt_add_ResponseStruct</java-type>
+<root-type-qname xmlns:typeNS="urn:arith">typeNS:addResponse</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>result</java-variable-name>
+<xml-element-name>result</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>arith.ArithInt_sub_ResponseStruct</java-type>
+<root-type-qname xmlns:typeNS="urn:arith">typeNS:subResponse</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>result</java-variable-name>
+<xml-element-name>result</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>arith.ArithInt_sub_RequestStruct</java-type>
+<root-type-qname xmlns:typeNS="urn:arith">typeNS:sub</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>int_1</java-variable-name>
+<xml-element-name>int_1</xml-element-name>
+</variable-mapping>
+<variable-mapping>
+<java-variable-name>int_2</java-variable-name>
+<xml-element-name>int_2</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<service-interface-mapping>
+<service-interface>arith.ArithService</service-interface>
+<wsdl-service-name xmlns:serviceNS="urn:arith">serviceNS:ArithService</wsdl-service-name>
+<port-mapping>
+<port-name>ArithIntPort</port-name>
+<java-port-name>ArithIntPort</java-port-name>
+</port-mapping>
+</service-interface-mapping>
+<service-endpoint-interface-mapping>
+<service-endpoint-interface>arith.ArithInt</service-endpoint-interface>
+<wsdl-port-type xmlns:portTypeNS="urn:arith">portTypeNS:ArithInt</wsdl-port-type>
+<wsdl-binding xmlns:bindingNS="urn:arith">bindingNS:ArithIntBinding</wsdl-binding>
+<service-endpoint-method-mapping>
+<java-method-name>add</java-method-name>
+<wsdl-operation>add</wsdl-operation>
+<wrapped-element/>
+<method-param-parts-mapping>
+<param-position>0</param-position>
+<param-type>int</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_add</wsdl-message>
+<wsdl-message-part-name>int_1</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<method-param-parts-mapping>
+<param-position>1</param-position>
+<param-type>int</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_add</wsdl-message>
+<wsdl-message-part-name>int_2</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<wsdl-return-value-mapping>
+<method-return-value>int</method-return-value>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_addResponse</wsdl-message>
+<wsdl-message-part-name>result</wsdl-message-part-name>
+</wsdl-return-value-mapping>
+</service-endpoint-method-mapping>
+<service-endpoint-method-mapping>
+<java-method-name>sub</java-method-name>
+<wsdl-operation>sub</wsdl-operation>
+<wrapped-element/>
+<method-param-parts-mapping>
+<param-position>0</param-position>
+<param-type>int</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_sub</wsdl-message>
+<wsdl-message-part-name>int_1</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<method-param-parts-mapping>
+<param-position>1</param-position>
+<param-type>int</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_sub</wsdl-message>
+<wsdl-message-part-name>int_2</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<wsdl-return-value-mapping>
+<method-return-value>int</method-return-value>
+<wsdl-message xmlns:wsdlMsgNS="urn:arith">wsdlMsgNS:ArithInt_subResponse</wsdl-message>
+<wsdl-message-part-name>result</wsdl-message-part-name>
+</wsdl-return-value-mapping>
+</service-endpoint-method-mapping>
+</service-endpoint-interface-mapping>
+</java-wsdl-mapping>

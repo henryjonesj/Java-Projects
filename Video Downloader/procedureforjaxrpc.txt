@@ -1,0 +1,72 @@
+compile VideoInt and VideoImpl
+
+set path=C:\Program Files (x86)\Java\jdk1.5.0_01\bin
+
+javac -d . Video*.java
+
+wsdl and mapping.xml:
+
+set path=%path%;c:\Sun\AppServer\bin   for wscompile
+
+set classpath=c:\Sun\AppServer\bin
+
+wscompile -define -mapping mapping.xml -d . -nd . -classpath . -config-interface.xml
+----------------------------------------------------------------------------------------
+
+start->sun microsystem->application server->start default server
+
+start->sun microsystem-> application server->deploy tool
+
+in deploy tool:
+ file->new->web component
+
+War file: path till video.war(e:/j2ee/video.war)
+
+press edit contents and add folders containing .class files mapping.xml and wsdl files 
+
+press next
+
+chose everything from drop down list
+
+press next
+
+chose from drop down
+
+make a note of context root(videocr) and local part
+
+select Endpoint
+
+press next and finish
+
+go to alias tab and give an alias name(FilmService)
+
+
+
+in Endpoint tab change the endpoint addr to alias name
+
+press save
+
+tools->deploy
+-----------------------------------------------------------------------------------------
+go to browser http://localhost:1078/add_cr/FilmService?wsdl
+-the deployed wsdl file will be displayed
+-------------------------------------------------------------
+
+set classpath=c:\Sun\AppServer\bin
+
+wscompile -gen:client -d . -nd . -classpath . config-wsdl.xml
+
+---------------------------------------------------------------
+
+
+set classpath=
+C:\Sun\jwsdp-2.0\jaxrpc\lib\jaxrpc-api.jar;
+C:\Sun\jwsdp-2.0\jaxrpc\lib\jaxrpc-impl.jar;
+C:\Sun\AppServer\lib\j2ee-1.4.jar;
+C:\Sun\AppServer\lib\saaj-impl.jar;
+C:\Sun\AppServer\lib\appserv-rt.jar;
+C:\Sun\AppServer\lib\j2ee.jar;
+C:\Sun\AppServer\lib\jaxrpc-ri.jar;.
+
+javac VideoClient.java
+java -Xmx310m videostub.VideoClient

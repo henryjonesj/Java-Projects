@@ -1,0 +1,30 @@
+package video;
+
+import java.rmi.*;
+
+public class VideoImpl implements VideoInt
+{
+
+public byte[] getVideo(String name) throws RemoteException
+	{
+try{	
+	File f=new File(name);
+
+	FileInputStream fis=new FileInputStream(f);	
+
+	byte buff[]=new byte[f.length()];
+
+	fis.read(buff);
+
+	fis.close();
+
+	return buff;
+
+	}catch(Exception e){System.out.println(e);}
+
+
+	}
+
+
+
+}

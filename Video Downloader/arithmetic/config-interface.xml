@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+<service name="ArithService"
+	packageName="arith"
+	targetNamespace="urn:arith"
+	typeNamespace="urn:arith">
+<interface name="arith.ArithInt"/>
+
+</service>
+</configuration>

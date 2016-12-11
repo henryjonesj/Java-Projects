@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+<service name="VideoService"
+	targetNamespace="urn:video"
+	typeNamespace="urn:video"
+	packageName="video">
+
+	<interface name="video.VideoInt"/>
+</service>
+
+</configuration>
